@@ -1,7 +1,10 @@
-const StatService = require("./../services/stat_service");
+const StatService = require("./../services/aggregator");
+const a = StatService.mswCall;
+const b = StatService.surflineCall;
 
 function index(req, res) {
-  res.render("pages/home");
+  res.send({ a, b });
+  // res.render("pages/home");
 }
 
 function dashboard(req, res) {

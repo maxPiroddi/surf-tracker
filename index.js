@@ -1,5 +1,4 @@
 require("dotenv").config();
-require("./database/connect");
 const app = require('./app');
 
 global.HTTPError = class HTTPError extends Error {
