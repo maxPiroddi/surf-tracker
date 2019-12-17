@@ -19,13 +19,20 @@
   },
   "dependencies": {
     "celebrate": "^11.0.0",
+    "connect": "^3.7.0",
     "connect-mongo": "^3.2.0",
+    "connect-mongodb-session": "^2.2.0",
+    "cookie-parser": "^1.4.4",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.17.0",
-    "mongoose": "^5.3.15",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.1",
     "mongoose-bcrypt": "^1.6.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   }
 }
