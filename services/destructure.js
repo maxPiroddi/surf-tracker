@@ -1,4 +1,4 @@
-const dataSets = require("./api_call");
+const apiDataSets = require("./api_call");
 
 module.exports = (async () => {
   const {
@@ -7,8 +7,8 @@ module.exports = (async () => {
     swell,
     wind,
     condition
-  } = await dataSets.mswCall();
-  const { spot, forecast } = await dataSets.surflineCall();
+  } = await apiDataSets.mswCall();
+  const { spot, forecast } = await apiDataSets.surflineCall();
 
   const mswReturn = {
     dataSource: "MSW",

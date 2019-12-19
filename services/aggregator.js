@@ -35,6 +35,7 @@ const aggregateData = async () => {
     airTemp: airTemp,
     boards: boards
   };
+
 };
 
 module.exports = aggregateData;
