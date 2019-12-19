@@ -1,13 +1,12 @@
-const StatService = require("./../services/aggregator");
-const a = StatService.mswCall;
-const b = StatService.surflineCall;
+const data = require("../services/aggregator");
 
-function index(req, res) {
-  res.send({ a, b });
-  // res.render("pages/home");
-}
+const index = async (req, res) => {
+  const surfData = await data;
+  console.log(surfData.aggregateData);
+  res.render("pages/dashboard");
+};
 
-function dashboard(req, res) {
+const dashboard = (req, res) => {
   res.render("pages/dashboard", { user: req.user });
 }
 
