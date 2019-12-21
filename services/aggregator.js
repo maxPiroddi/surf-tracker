@@ -5,7 +5,7 @@ const aggregateData = async () => {
   const msw = test.mswReturn;
   const surfline = test.surflineReturn;
 
-  const surfRating = msw.solidRating - msw.fadedRating / 2;
+  const surfRating = msw.solidRating + msw.fadedRating / 2;
   // console.log(`Surf Rating: ${surfRating}/5`);
 
   const swellMinFt = ((msw.minSwell + surfline.minSwell * 3.28) / 2).toFixed(1);
