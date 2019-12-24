@@ -5,7 +5,7 @@ const aggregateData = async () => {
   const msw = test.mswReturn;
   const surfline = test.surflineReturn;
 
-  const surfRating = msw.solidRating + msw.fadedRating / 2;
+  const surfRating = (msw.solidRating + msw.fadedRating / 2).toFixed(1);
   // console.log(`Surf Rating: ${surfRating}/5`);
 
   const swellMinFt = ((msw.minSwell + surfline.minSwell * 3.28) / 2).toFixed(1);
@@ -17,11 +17,13 @@ const aggregateData = async () => {
   const windSpeed = ((msw.windSpeedFt + surfline.wind) / 2).toFixed(0);
   // console.log(`Wind Speed: ${windSpeed}mph`);
 
-  const waterTemp = (msw.tempC + surfline.waterTemp) / 2;
+  const waterTemp = ((msw.tempC + surfline.waterTemp) / 2).toFixed(0);
   // console.log(`Water Temp: ${waterTemp}'C`);
 
-  const airTemp = surfline.airTemp;
+  const airTemp = surfline.airTemp.toFixed(0);
   // console.log(`Air Temp: ${airTemp}'C`);
+
+  const condition = surfline.condition;
 
   const boards = surfline.Boards;
   // console.log(`Recommended Boards: ${boards}`);
@@ -33,6 +35,7 @@ const aggregateData = async () => {
     windSpeed: windSpeed,
     waterTemp: waterTemp,
     airTemp: airTemp,
+    condition: condition,
     boards: boards
   };
 

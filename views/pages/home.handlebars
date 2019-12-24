@@ -1,1 +1,28 @@
 <h1>Home Page</h1>
+<h2>Current Conditions</h2>
+<p>Todays rating: {{{data.surfRating}}}</p>
+<p>Swell Range: {{{data.swellMinFt}}} - {{{data.swellMaxFt}}}ft</p>
+<p>Wind Speed: {{{data.windSpeed}}}mph</p>
+<p>Water Temperature: {{{data.waterTemp}}}˚C</p>
+<p>Air Temperature: {{{data.airTemp}}}˚C</p>
+<p>Recommended Boards:</h4>
+<ul>
+  {{#each data.boards}}
+    <li>{{{this}}}</li>
+  {{/each}}
+</ul>
+{{!-- 
+
+
+{
+"surfRating": 0.5,
+"swellMinFt": "3.0",
+"swellMaxFt": "4.8",
+"windSpeed": "29",
+"waterTemp": 21,
+"airTemp": 19,
+"boards": [
+"SHORTBOARD",
+"FISH"
+]
+} --}}
