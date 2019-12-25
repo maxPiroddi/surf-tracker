@@ -2,7 +2,7 @@ const UserModel = require("./../database/models/user_model");
 const jwt = require("jsonwebtoken");
 
 const registerNew = (req, res) => {
-  res.render("authentication/register");
+  res.render("authentication/register"); //Figure once FrontEnd is functional
 };
 
 const registerCreate = async (req, res, next) => {

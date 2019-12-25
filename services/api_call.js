@@ -1,12 +1,14 @@
 const axios = require("axios");
+require("dotenv").config();
 
 const mswCall = async () => {
   const magicSeaWeed = await axios.get(
     //16e56a3491acb58f5af051b9dd92e9f8
-    `http://magicseaweed.com/api/${process.env.MSW_KEY}/forecast/?spot_id=996`
+    // process.env doesn't seem to be working? Attempting to fix this now
+    `http://magicseaweed.com/api/16e56a3491acb58f5af051b9dd92e9f8/forecast/?spot_id=996`
   );
   // console.log(magicSeaWeed.data);
-  return magicSeaWeed.data;
+  return magicSeaWeed.data[0];
 };
 
 // Surfline is primarily used for up-to-date data, as their API does not return longer forecasts
