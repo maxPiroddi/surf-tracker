@@ -1,5 +1,4 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
 const morgan = require("morgan");
 const expressSession = require("express-session");
 const MongoStore = require("connect-mongo")(expressSession);
@@ -7,10 +6,6 @@ const mongoose = require("mongoose");
 const passport = require("./config/passport");
 const cookieParser = require("cookie-parser");
 const app = express();
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
 app.use(
   expressSession({
     secret: process.env.SESSION_SECRET,

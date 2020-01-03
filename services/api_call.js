@@ -1,12 +1,12 @@
 const axios = require("axios");
-require("dotenv").config();
 
 const mswCall = async () => {
+  // Store API key in const as calling directly within string inter. does not work.
   const mswKey = process.env.MSW;
   const magicSeaWeed = await axios.get(
     `http://magicseaweed.com/api/${mswKey}/forecast/?spot_id=996`
   );
-  // console.log(magicSeaWeed.data);
+  // Only pulling first result in order to not retrieve useless data.
   return magicSeaWeed.data[0];
 };
 
@@ -16,7 +16,6 @@ const surflineCall = async () => {
   const surfline = await axios.get(
     "https://services.surfline.com/kbyg/spots/reports?spotId=5842041f4e65fad6a7708bf8"
   );
-  // console.log(surfline.data);
   return surfline.data;
 };
 
