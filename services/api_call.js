@@ -2,10 +2,9 @@ const axios = require("axios");
 require("dotenv").config();
 
 const mswCall = async () => {
+  const mswKey = process.env.MSW;
   const magicSeaWeed = await axios.get(
-    //16e56a3491acb58f5af051b9dd92e9f8
-    // process.env doesn't seem to be working? Attempting to fix this now
-    `http://magicseaweed.com/api/16e56a3491acb58f5af051b9dd92e9f8/forecast/?spot_id=996`
+    `http://magicseaweed.com/api/${mswKey}/forecast/?spot_id=996`
   );
   // console.log(magicSeaWeed.data);
   return magicSeaWeed.data[0];
